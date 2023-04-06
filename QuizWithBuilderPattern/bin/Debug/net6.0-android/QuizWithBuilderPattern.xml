@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QuizWithBuilderPattern</name>
+    </assembly>
+    <members>
+        <member name="P:QuizWithBuilderPattern.ViewModel.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:QuizWithBuilderPattern.ViewModel.BaseViewModel._isBusy"/>
+        </member>
+        <member name="P:QuizWithBuilderPattern.ViewModel.BaseViewModel.ErrorMessage">
+            <inheritdoc cref="F:QuizWithBuilderPattern.ViewModel.BaseViewModel._errorMessage"/>
+        </member>
+        <member name="P:QuizWithBuilderPattern.ViewModel.RegistrationViewModel.Name">
+            <inheritdoc cref="F:QuizWithBuilderPattern.ViewModel.RegistrationViewModel._name"/>
+        </member>
+        <member name="F:QuizWithBuilderPattern.ViewModel.RegistrationViewModel.nextPageCommand">
+            <summary>The backing field for <see cref="P:QuizWithBuilderPattern.ViewModel.RegistrationViewModel.NextPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuizWithBuilderPattern.ViewModel.RegistrationViewModel.NextPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:QuizWithBuilderPattern.ViewModel.RegistrationViewModel.NextPage(System.Object)"/>.</summary>
+        </member>
+        <member name="P:QuizWithBuilderPattern.ViewModel.WelcomeViewModel.Name">
+            <inheritdoc cref="F:QuizWithBuilderPattern.ViewModel.WelcomeViewModel._name"/>
+        </member>
+        <member name="F:QuizWithBuilderPattern.ViewModel.WelcomeViewModel.nextPageCommand">
+            <summary>The backing field for <see cref="P:QuizWithBuilderPattern.ViewModel.WelcomeViewModel.NextPageCommand"/>.</summary>
+        </member>
+        <member name="P:QuizWithBuilderPattern.ViewModel.WelcomeViewModel.NextPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:QuizWithBuilderPattern.ViewModel.WelcomeViewModel.NextPage"/>.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QuizWithBuilderPattern.View.QuizgamePage"
+             xmlns:viewmodel="clr-namespace:QuizWithBuilderPattern.ViewModel.QuizGameViewModel"
+             Title="QuizgamePage">
+    <ContentPage.BindingContext>
+        <viewmodel:QuizGameViewModel/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <StackLayout
+            Spacing="25">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualState x:Name="Normal" >
+                        <VisualState.Setters >
+                            <Setter 
+                              Property="RadioButton.TextColor"
+                              Value="#858585"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Checked">
+                        <VisualState.Setters>
+                            <Setter
+                               Property="RadioButton.TextColor"
+                               Value="White"/>
+                            <Setter 
+                               Property="Border.BackgroundColor"
+                               Value="#62a0a2" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="Unchecked">
+                        <VisualState.Setters>
+                            <Setter
+                               Property="RadioButton.TextColor"
+                               Value="#858585"/>
+                            <Setter 
+                               Property="Border.BackgroundColor"
+                               Value="White" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <VerticalStackLayout
+                Spacing="15"
+                Margin="0,30,0,0">
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Label
+                    FontFamily="Winkle-Regular"
+                    HorizontalOptions="StartAndExpand"
+                    FontSize="30"
+                    TextColor="#ff7f4f"
+                    Text="{Binding CurrentQuestion}"/>
+                    <HorizontalStackLayout
+                        Spacing="5"
+                        HorizontalOptions="EndAndExpand">
+                        <Label
+                            FontSize="30"
+                            FontFamily="Winkle-Regular"
+                            TextColor="#62a0a2"
+                            Text="Points:"/>
+                        <Label
+                            FontFamily="Winkle-Regular"
+                            HorizontalOptions="EndAndExpand"
+                            FontSize="30"
+                            TextColor="#ff7f4f"
+                            Text="{Binding Points}"/>
+                    </HorizontalStackLayout>
+                </StackLayout>
+                <ProgressBar
+                    Progress="{Binding Progress}"
+                    ProgressColor="#62a0a2"/>
+                <Label
+                    TextColor="#473c8b"
+                    FontSize="30"
+                    FontFamily="Homemade-Sausage"
+                    Text="{Binding CurrentQuestionDataModel.Question}"/>
+                <Border
+                    x:Name="OptionOneBorder"
+                    Padding="5"
+                    StrokeShape="RoundRectangle 10">
+                    <RadioButton
+                        x:Name="OptionOneRadioButton"
+                        IsChecked="{Binding OptionA}"
+                        GroupName="AnswerGroup"
+                        RadioButtonGroup.GroupName="AnswerGroup"
+                        FontSize="30"
+                        FontFamily="Homemade-Sausage"
+                        Content="{Binding CurrentQuestionDataModel.OptionA}">
+                    </RadioButton>
+                </Border>
+                <Border
+                    x:Name="OptionTwoBorder"
+                    Padding="5"
+                    StrokeShape="RoundRectangle 10">
+                    <RadioButton
+                        x:Name="OptionTwoRadioButton"
+                        IsChecked="{Binding OptionB}"
+                        GroupName="AnswerGroup"
+                        RadioButtonGroup.GroupName="AnswerGroup"
+                        FontSize="30"
+                        FontFamily="Homemade-Sausage"
+                        Content="{Binding CurrentQuestionDataModel.OptionB}">
+
+                    </RadioButton>
+                </Border>
+                <Border
+                    x:Name="OptionThreeBorder"
+                    Padding="5"
+                    StrokeShape="RoundRectangle 10">
+                    <RadioButton
+                        x:Name="OptionThreeRadioButton"
+                        IsChecked="{Binding OptionC}"
+                        GroupName="AnswerGroup"
+                        RadioButtonGroup.GroupName="AnswerGroup"
+                        FontSize="30"
+                        FontFamily="Homemade-Sausage"
+                        Content="{Binding CurrentQuestionDataModel.OptionC}">
+
+
+                    </RadioButton>
+                </Border>
+                <Border
+                    x:Name="OptionFourBorder"
+                    Padding="5"
+                    StrokeShape="RoundRectangle 10">
+                    <RadioButton
+                        x:Name="OptionFourRadioButton"
+                        IsChecked="{Binding OptionD}"
+                        GroupName="AnswerGroup"
+                        RadioButtonGroup.GroupName="AnswerGroup"
+                        FontSize="30"
+                        FontFamily="Homemade-Sausage"
+                        Content="{Binding CurrentQuestionDataModel.OptionD}">
+
+
+                    </RadioButton>
+                </Border>
+
+            </VerticalStackLayout>
+            <Label
+                IsVisible="{Binding IsErrorVisible}"
+                Margin="0,20,0,0"
+                HorizontalOptions="Center"
+                FontFamily="Homemade-Sausage"
+                FontSize="Medium"
+                TextColor="#cd5555"
+                Text="{Binding Attempts}"/>
+
+            <Button
+                Command="{Binding SubmitAnswerCommand}"
+                Margin="0,80,0,0"
+                VerticalOptions="EndAndExpand"
+                FontSize="Large"
+                Padding="10"
+                CornerRadius="30"
+                FontFamily="Homemade-Sausage"
+                Text="Submit"
+                BackgroundColor="#6899ef"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
